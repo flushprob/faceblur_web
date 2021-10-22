@@ -1,3 +1,4 @@
+os
 notebook==6.4.0
 numpy 
 opencv-python==4.5.3.56

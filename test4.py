@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image, ImageFilter, ImageEnhance
 import math
 
-from os import P_DETACH
+#from os import P_DETACH
 
 
 arch = join(dirname(__file__), "blur_data/weights/deploy.prototxt.txt")

@@ -9,6 +9,7 @@ import os
 from os.path import dirname, join
 from pathlib import Path
 from PIL import Image, ImageFilter, ImageEnhance
+from facial_landmarks import FaceLandmarks
 
 #from os import P_DETACH
 
@@ -20,6 +21,7 @@ weights = join(dirname(__file__), "blur_data/weights/res10_300x300_ssd_iter_1400
 neural_net = cv2.dnn.readNetFromCaffe(arch, weights)
 
 threshold = 0.3
+
 
 def detect_faces(img): 
     cv2_image = np.array(img)
@@ -60,7 +62,6 @@ def main():
 
     st.title("Face Blurring App")
     st.text("blurring face using openCV")
-    st.text("Built via Streamlit")
 
 
     activities = ["Detection", "About"]

@@ -53,7 +53,7 @@ def main():
         show_file.image(file)
     else:
         df = pd.read_csv(file)
-        st.dataframe(df.head(2))
+        st.datacv2_image(df.head(2))
         file.close()
 
 def load_model():

@@ -1,2 +1,5 @@
 python-opencv
-apt-get install libgl1-mesa-glx
+libsm6
+libxrender1
+libfontconfig1
+libice6

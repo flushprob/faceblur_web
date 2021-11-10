@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run test6.py
+web: sh setup.sh && streamlit run faceblur.py

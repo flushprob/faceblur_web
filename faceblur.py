@@ -1,4 +1,4 @@
-##Last TEST 21-10-21 - 03:43
+##Last TEST 21-11-10 - 11:15
 
 import streamlit as st
 import numpy as np
@@ -167,7 +167,7 @@ def main():
             st.write(type(cv2_image))
             st.image(cv2_image)
 
-        task = ['Original', 'Blurring', 'Landmark Blurring - ONE PERSON']
+        task = ['Original', 'Blurring', 'Landmark Blurring']
         feature_choice = st.sidebar.selectbox("Function", task)
         if st.button("Process"):
 
@@ -175,8 +175,7 @@ def main():
                 pass
             elif feature_choice == 'Blurring':
                 st.image(detect_faces(cv2_image))
-            elif feature_choice == 'Landmark Blurring - ONE PERSON':
-                # st.image(lmsblur3(cv2_image))
+            elif feature_choice == 'Landmark Blurring':
                 st.image(lmsblur4(cv2_image))
 
 

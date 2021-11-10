@@ -67,8 +67,8 @@ def lmsblur3(img):
     results = faceMesh.process(imgRGB)
     height, width, _ = img.shape
     h, w = img.shape[:2]
-    kernel_width = (w // 7) | 1
-    kernel_height = (h // 7) | 1
+    kernel_width = (w // 2) | 1
+    kernel_height = (h // 2) | 1
     if results.multi_face_landmarks:
         for faceLms in results.multi_face_landmarks:
             convexhull = cv2.convexHull(landmarks)
@@ -90,13 +90,9 @@ drawing_spec = mp_drawing.DrawingSpec(color = [255, 255, 255], thickness=1, circ
 #caffe + mediapipe
 def lmsblur4(img):
     img = np.array(img)
-    #img = np.array(img)
-    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     height, width, _ = img.shape
     cv2_image = np.array(img)
     h, w = cv2_image.shape[:2]
-    kernel_width = (w // 7) | 1
-    kernel_height = (h // 7) | 1
     blob = cv2.dnn.blobFromImage(
         cv2_image,
         scalefactor=1.0,

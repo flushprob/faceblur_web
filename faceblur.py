@@ -35,7 +35,6 @@ def lmsblur1(img):
 
     return img
 
-
 def lmsblur2(img):
     img = np.array(img)
     img = cv2.resize(img, None, fx=0.5, fy=0.5)

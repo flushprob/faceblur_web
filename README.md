@@ -1,6 +1,7 @@
 # Faceblurring webApp
 얼굴 모자이크(블러링) 웹앱 입니다.
 
+[Demo](https://face-blurring.herokuapp.com/)는 여기서 확인 가능합니다.
 ### 구성 
 
 <img src="https://user-images.githubusercontent.com/72862843/141692638-bbd1c195-6449-4202-a93d-601ccfdd2bae.png" width="600"></img>

@@ -148,34 +148,24 @@ def main():
     st.title("Face Blurring App")
     st.text("blurring face using openCV")
 
-    activities = ["Detection", "About"]
-    choice = st.sidebar.selectbox("Select Function", activities)
+    image_file = st.file_uploader("Upload Image", type=['jpg', 'png', 'jpeg', 'heic'])
 
-    if choice == 'Detection':
-        st.subheader('Face Blurring')
+    if image_file is not None:
+        cv2_image = Image.open(image_file)
+        st.text("Original Image")
+        st.write(type(cv2_image))
+        st.image(cv2_image)
 
-        image_file = st.file_uploader("Upload Image", type=['jpg', 'png', 'jpeg', 'heic'])
+    task = ['Original', 'Blurring', 'Landmark Blurring']
+    feature_choice = st.sidebar.selectbox("Function", task)
+    if st.button("Process"):
 
-        if image_file is not None:
-            cv2_image = Image.open(image_file)
-            st.text("Original Image")
-            st.write(type(cv2_image))
-            st.image(cv2_image)
-
-        task = ['Original', 'Blurring', 'Landmark Blurring']
-        feature_choice = st.sidebar.selectbox("Function", task)
-        if st.button("Process"):
-
-            if feature_choice == 'Original':
-                pass
-            elif feature_choice == 'Blurring':
-                st.image(detect_faces(cv2_image))
-            elif feature_choice == 'Landmark Blurring':
-                st.image(lmsblur4(cv2_image))
-
-
-    elif choice == 'About':
-        st.subheader('About')
+        if feature_choice == 'Original':
+            pass
+        elif feature_choice == 'Blurring':
+            st.image(detect_faces(cv2_image))
+        elif feature_choice == 'Landmark Blurring':
+            st.image(lmsblur4(cv2_image))
 
 if __name__ == '__main__':
     main()
